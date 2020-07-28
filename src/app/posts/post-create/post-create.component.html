@@ -1,0 +1,29 @@
+<mat-card>
+    <form #mainForm="ngForm" (submit)="onAddPost(mainForm)">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput type="text" name='postName'
+                 ngModel 
+                 required
+                 #postName="ngModel"
+                 >
+                <mat-error *ngIf="postName.invalid">{{"This field is required"}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Content</mat-label>
+                <textarea matInput rows='10' cols='150' name='postData'
+                 ngModel 
+                required
+                #postData="ngModel"
+                ></textarea>
+                <mat-error *ngIf="postData.invalid">{{"This field is required"}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <hr>
+        <button mat-raised-button color='primary' type="submit">Save</button>
+    </form>
+</mat-card>

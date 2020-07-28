@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'meanApp';
+
+  @Input() posts:Array<{title:string, content: string}> = []
+
+  getCreatedPost(e: {title:string, content: string}){
+    this.posts.push(e)
+    console.log("Posts Array", this.posts);
+  }
 }
