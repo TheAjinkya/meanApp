@@ -7,6 +7,7 @@
                  ngModel 
                  required
                  #postName="ngModel"
+                 placeholder="Post Title"
                  >
                 <mat-error *ngIf="postName.invalid">{{"This field is required"}}</mat-error>
             </mat-form-field>
@@ -18,6 +19,7 @@
                  ngModel 
                 required
                 #postData="ngModel"
+                placeholder="Post content"
                 ></textarea>
                 <mat-error *ngIf="postData.invalid">{{"This field is required"}}</mat-error>
             </mat-form-field>

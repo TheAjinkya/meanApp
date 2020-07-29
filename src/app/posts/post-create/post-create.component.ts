@@ -27,7 +27,8 @@ export class PostCreateComponent implements OnInit {
       title : formId.value.postName,
       content : formId.value.postData
     }
-    this.childEvent.emit(post)
+    // this.childEvent.emit(post)
+    this.postService.addPosts(post)
   }
   
   ngOnInit() {
